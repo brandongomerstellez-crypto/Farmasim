@@ -1,0 +1,415 @@
+
+:root {
+  --navy:#10243b;
+  --teal:#0bbba9;
+  --blue:#467bda;
+  --orange:#e79a50;
+  --bg:#f3f7fb;
+  --text:#1c3449;
+  --muted:#788ca0;
+  --line:#e0eaf2;
+  --shadow:0 12px 30px rgba(30,60,90,.07);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font:14px/1.6 "Segoe UI",Arial,sans-serif
+}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit}
+button{cursor:pointer}
+[hidden]{display:none!important}
+
+.sidebar{
+  position:fixed;inset:0 auto 0 0;width:255px;
+  padding:28px 20px;display:flex;flex-direction:column;
+  background:linear-gradient(145deg,#10243b,#123650);
+  color:white;z-index:50
+}
+.brand{
+  display:flex;align-items:center;gap:11px;
+  font-size:23px;font-weight:800;line-height:1.2
+}
+.brand-symbol{
+  display:grid;place-items:center;width:45px;height:45px;
+  background:linear-gradient(120deg,#11bfb1,#288ac9);
+  border-radius:13px;font-size:25px
+}
+.brand .accent{color:#43e4cc}
+.brand small{
+  display:block;font-size:9px;color:#a6c0cf;
+  letter-spacing:1px;margin-top:5px
+}
+.menu-label{
+  margin:44px 12px 13px;font-size:11px;
+  letter-spacing:2px;color:#829eb4
+}
+.sidebar nav{display:grid;gap:7px}
+.sidebar nav a{
+  padding:13px;border-radius:11px;
+  font-size:13px;color:#bdd1df
+}
+.sidebar nav a:hover{
+  background:#25475e;color:white
+}
+.side-info{
+  margin-top:auto;border:1px solid #38536b;
+  padding:15px;border-radius:12px;font-size:12px
+}
+.side-info strong{color:#54e0cd}
+.side-info p{margin:5px 0;color:#a6bdc9}
+
+.main{margin-left:255px;min-width:0}
+.topbar{
+  height:73px;padding:0 30px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:white;border-bottom:1px solid var(--line);
+  color:#7890a3;font-size:13px
+}
+.topbar b{color:var(--text)}
+.online{
+  background:#e4faf2;color:#118d79;
+  padding:8px 13px;border-radius:30px;font-weight:700
+}
+.menu-btn{display:none}
+.content{max-width:1550px;margin:auto;padding:30px}
+
+.hero{
+  min-height:295px;padding:45px;border-radius:24px;
+  background:linear-gradient(115deg,#153b59,#0d7186,#0ab6a2);
+  display:flex;align-items:center;color:white;
+  position:relative;overflow:hidden
+}
+.hero-copy{position:relative;z-index:1;max-width:620px}
+.eyebrow{
+  color:#bbfff3;letter-spacing:1.5px;
+  font-size:11px;font-weight:800
+}
+.hero h1{
+  margin:14px 0;font-size:clamp(30px,4vw,47px);
+  line-height:1.2
+}
+.hero h1 em{color:#b7fff0;font-style:normal}
+.hero p{max-width:560px;font-size:14px;color:#e4f8f3}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:23px}
+.hero-capsule{
+  width:155px;height:70px;position:absolute;
+  right:10%;top:38%;transform:rotate(-32deg);
+  border:5px solid #ffffff85;border-radius:55px;
+  background:linear-gradient(90deg,white 50%,#6fe5d6 50%);
+  box-shadow:0 20px 35px #063b4e80
+}
+
+.btn{
+  min-height:42px;display:inline-flex;align-items:center;
+  justify-content:center;text-align:center;padding:11px 15px;
+  border:1px solid transparent;border-radius:11px;
+  font-size:13px;font-weight:700;transition:.2s
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px #123b5920}
+.btn.white{background:white;color:#147e96}
+.btn.glass{background:#ffffff22;border-color:#ffffff66;color:white}
+.btn.primary{
+  background:linear-gradient(110deg,#258bc9,#0bb8a7);color:white
+}
+.btn.secondary{
+  background:#edf5f9;border-color:var(--line);color:#4d7088
+}
+.full{width:100%;margin-top:17px}
+
+.stats{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;margin:24px 0 45px
+}
+.stats article{
+  display:flex;align-items:center;gap:14px;padding:20px;
+  background:white;border:1px solid var(--line);
+  border-radius:16px;box-shadow:var(--shadow)
+}
+.stat-icon{
+  width:51px;height:51px;display:grid;place-items:center;
+  background:#e5f8f4;border-radius:13px;font-size:24px
+}
+.stat-icon.purple{background:#f0eaff}
+.stat-icon.gold{background:#fff2de}
+.stats strong{display:block;font-size:26px}
+.stats small{display:block;color:var(--muted);font-size:12px}
+
+.section{margin-bottom:49px;scroll-margin-top:24px}
+.section-head{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:18px;margin-bottom:21px
+}
+.section-head h2{margin:5px 0;font-size:27px}
+.section-head p{margin:0;font-size:13px;color:var(--muted)}
+.section-tag{
+  color:#0a9c9e;font-size:11px;font-weight:800;letter-spacing:1.4px
+}
+.counter{
+  background:#e4f5fa;color:#277e9c;
+  border-radius:25px;padding:8px 13px;
+  font-size:12px;font-weight:700
+}
+.search-box{
+  display:flex;align-items:center;gap:10px;
+  width:min(100%,630px);border:1px solid var(--line);
+  padding:0 15px;border-radius:12px;background:white
+}
+.search-box span{font-size:25px;color:#8fa5b3}
+.search-box input{
+  width:100%;border:0;outline:0;background:transparent;
+  padding:15px 0
+}
+.filters{
+  display:flex;flex-wrap:wrap;gap:9px;margin:20px 0 23px
+}
+.filter{
+  padding:9px 13px;background:white;color:#58758a;
+  border:1px solid var(--line);border-radius:25px;
+  font-size:12px;font-weight:700
+}
+.filter:hover,.filter.active{
+  background:#129e9e;color:white;border-color:#129e9e
+}
+
+.drug-grid{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:20px
+}
+.drug-card{
+  background:white;border:1px solid var(--line);
+  border-radius:19px;overflow:hidden;box-shadow:var(--shadow);
+  transition:.2s
+}
+.drug-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 33px #123c5b20
+}
+.drug-visual{
+  height:165px;background:var(--drug-color,#e7f8f4);
+  display:grid;place-items:center;position:relative
+}
+.med-symbol{font-size:68px;filter:drop-shadow(0 8px 10px #123d5920)}
+.drug-category{
+  position:absolute;left:12px;top:12px;
+  background:#fffffff0;color:#49667d;
+  padding:6px 11px;border-radius:20px;
+  font-size:11px;font-weight:700
+}
+.drug-info{padding:20px}
+.drug-info h3{font-size:21px;margin:0 0 7px}
+.drug-info p{color:#6f8597;font-size:12px}
+.drug-info .effects{
+  background:#fff8eb;color:#8f6841;
+  padding:10px;border-radius:9px;min-height:66px
+}
+.drug-life{
+  display:inline-block;background:#f0f6f9;
+  color:#54768c;font-size:12px;
+  padding:8px 10px;border-radius:8px;margin:10px 0
+}
+.drug-buttons{display:flex;gap:9px}
+.drug-buttons .btn{flex:1}
+
+.lab-grid{
+  display:grid;grid-template-columns:350px minmax(0,1fr);
+  gap:21px
+}
+.panel{
+  min-width:0;padding:24px;background:white;
+  border:1px solid var(--line);
+  border-radius:19px;box-shadow:var(--shadow)
+}
+.panel h3{font-size:20px;margin:0 0 7px}
+.muted{font-size:12px;color:var(--muted)}
+.panel label,.field-label{
+  display:block;margin:19px 0 8px;
+  font-size:13px;font-weight:700
+}
+.panel input[type=number],.panel select{
+  width:100%;border:1px solid #d9e6ee;
+  border-radius:10px;background:#fcfdff;padding:12px
+}
+.panel input[type=range]{
+  width:100%;accent-color:var(--teal)
+}
+.range-value{
+  color:#0b978f;font-size:12px;font-weight:700;text-align:right
+}
+.choices{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:8px
+}
+.choices button{
+  min-height:99px;min-width:0;padding:8px 4px;
+  background:white;border:1.5px solid #dce7ee;
+  border-radius:12px;color:#4d6f86;
+  font-size:11px;font-weight:700
+}
+.choices button.active{
+  border-color:var(--teal);
+  color:#0b8b80;background:#e8faf6;
+  box-shadow:0 0 0 3px #0bbba916
+}
+.choice-icon{display:block;font-size:37px;margin-bottom:6px}
+.notice{
+  background:#edf8fc;border-left:4px solid var(--blue);
+  border-radius:10px;padding:14px;margin-top:18px;
+  font-size:12px;color:#4b7185
+}
+.notice p{margin:7px 0}
+.error{color:#b73845;font-size:12px}
+
+.legend{
+  display:flex;flex-wrap:wrap;gap:15px;
+  color:#5c768b;font-size:12px;margin-top:13px
+}
+.dot{
+  display:inline-block;width:10px;height:10px;
+  border-radius:50%;margin-right:5px
+}
+.dot.teal{background:var(--teal)}
+.dot.blue{background:var(--blue)}
+.dot.orange{background:var(--orange)}
+.chart{
+  height:360px;background:#fcfeff;
+  border:1px solid #eaf1f6;border-radius:14px;
+  padding:8px;margin-top:15px
+}
+.chart svg{width:100%;height:100%;display:block}
+.result-grid{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;margin-top:19px
+}
+.result-card{
+  background:#f7fafc;border:1px solid var(--line);
+  border-radius:11px;padding:14px;min-width:0
+}
+.result-card small{display:block;color:var(--muted);font-size:11px}
+.result-card strong{
+  display:block;margin-top:6px;color:#147791;
+  font-size:17px;overflow-wrap:anywhere
+}
+
+.table-scroll{overflow-x:auto}
+table{width:100%;min-width:660px;border-collapse:collapse}
+thead{background:#143a55;color:white}
+td,th{padding:13px;text-align:left;font-size:12px}
+tbody tr{border-bottom:1px solid var(--line)}
+tbody tr:nth-child(even){background:#f3f8fb}
+td:first-child{font-weight:700}
+.empty{padding:25px;color:var(--muted);text-align:center}
+
+.about{
+  background:white;border:1px solid var(--line);
+  border-radius:19px;padding:28px
+}
+.about h2{margin:8px 0}
+.about p{font-size:14px;color:#6f8496}
+footer{
+  padding:26px;color:var(--muted);font-size:12px;
+  border-top:1px solid var(--line);text-align:center
+}
+
+/* FICHAS FARMACOLÓGICAS */
+
+#modal{
+  border:0;border-radius:21px;width:min(880px,95vw);
+  max-height:92vh;padding:0;margin:auto;
+  overflow-y:auto;box-shadow:0 25px 85px #0005
+}
+#modal::backdrop{background:#092037c9;backdrop-filter:blur(4px)}
+.modal-close{
+  position:sticky;float:right;right:12px;top:12px;
+  margin:12px 12px -48px 0;z-index:5;
+  width:39px;height:39px;border-radius:50%;border:0;
+  background:#fffffff2;font-size:27px;color:#284861
+}
+.ficha-header{
+  background:linear-gradient(115deg,#112f49,#11667d,#0aaf9e);
+  padding:34px;color:white
+}
+.ficha-category{
+  display:inline-block;background:#ffffff22;
+  border:1px solid #ffffff60;border-radius:25px;
+  padding:7px 12px;font-size:12px;font-weight:700
+}
+.ficha-header h2{font-size:36px;margin:15px 0 8px}
+.ficha-header p{font-size:14px;color:#dff9f4}
+.ficha-overview{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;margin-top:24px
+}
+.ficha-overview div{
+  padding:14px;border-radius:11px;
+  background:#ffffff1a;border:1px solid #ffffff48
+}
+.ficha-overview small{
+  display:block;color:#c1e9e4;font-size:11px
+}
+.ficha-overview strong{
+  display:block;margin-top:6px;font-size:14px
+}
+.ficha-content{display:grid;gap:14px;padding:28px}
+.ficha-section{
+  border:1px solid #e1eaf1;border-radius:13px;
+  background:#fbfdff;padding:18px
+}
+.ficha-section h3{
+  color:#155e79;margin:0 0 7px;font-size:16px
+}
+.ficha-section p{
+  color:#5a7186;font-size:13px;line-height:1.8;margin:0
+}
+.ficha-section.danger{
+  background:#fff3f2;border-color:#f0ceca;
+  border-left:5px solid #d65b51
+}
+.ficha-section.danger h3{color:#ac403b}
+.ficha-section.warning{
+  background:#fff9ed;border-color:#f0dfbb;
+  border-left:5px solid #dda542
+}
+.ficha-notice{
+  background:#eaf5fa;color:#496e83;
+  border-left:5px solid #258bc9;
+  border-radius:10px;padding:17px;font-size:12px
+}
+.ficha-actions{display:flex;gap:12px;flex-wrap:wrap}
+.ficha-actions .btn{flex:1;min-width:180px}
+
+button:focus-visible,a:focus-visible,
+input:focus-visible,select:focus-visible{
+  outline:3px solid #64c8d6;outline-offset:2px
+}
+
+@media(max-width:1180px){
+  .lab-grid{grid-template-columns:1fr}
+  .drug-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero-capsule{opacity:.4}
+}
+@media(max-width:760px){
+  .sidebar{transform:translateX(-100%);transition:.25s}
+  .sidebar.open{transform:translateX(0)}
+  .main{margin-left:0}
+  .menu-btn{
+    display:block;border:0;padding:8px 12px;
+    border-radius:8px;background:#e8f5f9
+  }
+  .topbar{padding:0 15px}
+  .online{display:none}
+  .content{padding:16px}
+  .hero{padding:28px}
+  .hero-capsule{display:none}
+  .stats,.drug-grid{grid-template-columns:1fr}
+  .section-head{flex-direction:column;align-items:flex-start}
+  .result-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ficha-overview{grid-template-columns:1fr}
+  .ficha-header{padding:28px 20px}
+  .ficha-content{padding:17px}
+}
+@media(max-width:390px){
+  .result-grid{grid-template-columns:1fr}
+  .choices button{font-size:10px}
+}
